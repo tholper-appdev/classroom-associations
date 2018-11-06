@@ -7,6 +7,8 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params.fetch("id_to_display"))
+    
+    @courses = Course.where(:department_id => @department.id)
 
     render("department_templates/show.html.erb")
   end

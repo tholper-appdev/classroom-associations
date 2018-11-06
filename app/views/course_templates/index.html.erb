@@ -19,6 +19,10 @@
     </th>
 
     <th>
+      Department
+    </th>
+    
+    <th>
     </th>
   </tr>
 
@@ -30,6 +34,10 @@
 
     <td>
       <%= course.title %>
+    </td>
+
+    <td>
+        <a href="/departments/<%= course.department_id %>"><%= Department.find_by(id: course.department_id).name %></a>
     </td>
 
     <td>
