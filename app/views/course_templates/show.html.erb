@@ -42,7 +42,7 @@
 <h4 class="pt-4">Roster</h4>
 <div class="list-group">
     <% @enrollments.each do |enrollment| %>
-    <a class="list-group-item" href="/enrollments/<%= enrollment.student_id %>">
+    <a class="list-group-item" href="/enrollments/<%= enrollment.id %>">
           <%= Student.find_by(id: enrollment.student_id).first_name %>
           <%= Student.find_by(id: enrollment.student_id).last_name %>
     </a>

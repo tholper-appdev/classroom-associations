@@ -7,6 +7,10 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params.fetch("id_to_display"))
+    
+    @course_count = Enrollment.where(:student_id => @student.id).count
+    
+    @enrollments = Enrollment.where(:student_id => @student.id)
 
     render("student_templates/show.html.erb")
   end
