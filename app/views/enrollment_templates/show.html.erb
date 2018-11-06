@@ -29,14 +29,15 @@
         Course
       </dt>
       <dd>
-        <%= @enrollment.course_id %>
+        <%= Course.find_by(id: @enrollment.course_id).title %>
       </dd>
 
       <dt>
         Student
       </dt>
       <dd>
-        <%= @enrollment.student_id %>
+          <%= Student.find_by(id: @enrollment.student_id).first_name %>
+          <%= Student.find_by(id: @enrollment.student_id).last_name %>
       </dd>
 
       <dt>

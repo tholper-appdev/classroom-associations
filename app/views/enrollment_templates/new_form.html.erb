@@ -21,7 +21,8 @@
       Student
     </label>
 
-    <input type="text" id="student_id" name="student_id" class="form-control">
+    <%= select_tag("student_id", options_from_collection_for_select(Student.all, :id, :last_name, @enrollment.try(:student_id)), :class => "form-control") %>
+
     or <a href="/students/new">add a new student</a> first
   </div>
   
